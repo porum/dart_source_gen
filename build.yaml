@@ -1,0 +1,15 @@
+builders:
+  routeBuilder:
+    import: 'package:dart_source_gen/builder.dart'
+    builder_factories: ['routeBuilder']
+    build_extensions: { ".dart": [ ".route" ] }
+    auto_apply: root_package
+    build_to: source
+  
+  routeCollectBuilder:
+    import: 'package:dart_source_gen/builder.dart'
+    builder_factories: [ "routeCollectBuilder" ]
+    build_extensions: { ".dart": [ "bin/route_table.dart" ] }
+    auto_apply: root_package
+    required_inputs: ['.route']
+    build_to: source
